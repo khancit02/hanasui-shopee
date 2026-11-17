@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hanasui Official Store — Katalog & Asisten AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="brand-badge">OFFICIAL CATALOG</span>
+        <h1>Hanasui Official Store</h1>
+        <p>Skincare & Kosmetik BPOM • Terintegrasi AI Beauty Advisor (RAG)</p>
+      </div>
+      <div class="nav-actions">
+        <a href="https://shopee.co.id/hanasuiofficialstore" target="_blank" class="btn-shopee">🛍️ Kunjungi Lapak Shopee</a>
+        <button id="toggleGatewayBtn" class="btn-gateway">⚙️ Panel Gateway WA</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-container">
+    <!-- Panel Gateway WhatsApp (Otomatis sembunyi saat dibuka di Vercel) -->
+    <section id="gatewayPanel" class="card gateway-card hidden">
+      <div class="gateway-header">
+        <div>
+          <h2>Gateway Bot WhatsApp (Server Lokal)</h2>
+          <p>Hubungkan nomor WhatsApp cadangan untuk membalas chat pelanggan otomatis.</p>
+        </div>
+        <div class="status-pill">
+          <span id="statusDot" class="dot"></span>
+          <span id="statusText">Bot Offline</span>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button id="startBtn" class="btn-success">Mulai Bot WA</button>
+        <button id="stopBtn" class="btn-danger hidden">Hentikan Bot</button>
+        <button id="resetBtn" class="btn-secondary">Reset Sesi WA</button>
+      </div>
+      <div id="qrBox" class="qr-box hidden">
+        <p>Pindai QR Code melalui menu <strong>Perangkat Tertaut</strong> di WhatsApp HP:</p>
+        <div id="qrcode">Menunggu QR Code...</div>
+      </div>
+    </section>
+
+    <!-- Banner Konsultasi via WhatsApp -->
+    <section class="card wa-cta-card">
+      <div>
+        <h2>Konsultasi Produk Langsung via WhatsApp</h2>
+        <p>Pilih kategori produk yang ingin ditanyakan untuk mengirim pesan otomatis ke Bot WhatsApp kami:</p>
+      </div>
+      <div class="wa-controls">
+        <select id="waCategorySelect">
+          <option value="Semua Produk">Semua Katalog Produk</option>
+          <option value="Serum Wajah">Serum Wajah</option>
+          <option value="Lip Makeup">Lip Cream & Lip Tint</option>
+          <option value="Moisturizer">Moisturizer</option>
+          <option value="Sunscreen">Sunscreen</option>
+          <option value="Paket Hemat">Paket Hemat</option>
+        </select>
+        <a id="waDirectLink" href="#" target="_blank" class="btn-wa">💬 Chat WhatsApp Sekarang</a>
+      </div>
+    </section>
+
+    <div class="content-grid">
+      <!-- Kolom Kiri: Katalog Produk Hasil Scraping Shopee -->
+      <section class="catalog-section">
+        <div class="section-header">
+          <h2>Katalog Produk Shopee</h2>
+          <div class="filter-bar">
+            <input type="text" id="searchInput" placeholder="Cari serum, lip cream, sunscreen...">
+            <select id="categoryFilter">
+              <option value="ALL">Semua Kategori</option>
+            </select>
+          </div>
+        </div>
+        <div id="productsGrid" class="products-grid">
+          <p class="loading-text">Memuat katalog produk Hanasui...</p>
+        </div>
+      </section>
+
+      <!-- Kolom Kanan: Chatbot Web Berbasis RAG -->
+      <aside class="chat-section">
+        <div class="chat-card">
+          <div class="chat-header">
+            <h3>✨ AI Beauty Advisor (RAG)</h3>
+            <span>Tanya harga, promo, & link produk</span>
+          </div>
+          <div id="chatMessages" class="chat-messages">
+            <div class="msg bot">
+              Halo! Selamat datang di <strong>Hanasui Official Store</strong>. ✨<br>
+              Tanyakan produk skincare atau lip makeup yang Anda cari (contoh: <em>"rekomendasi serum untuk jerawat"</em> atau <em>"produk termurah"</em>).
+            </div>
+          </div>
+          <form id="chatForm" class="chat-input-form">
+            <input type="text" id="chatInput" placeholder="Ketik pertanyaan produk..." required autocomplete="off">
+            <button type="submit" id="sendBtn">Kirim</button>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

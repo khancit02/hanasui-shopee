@@ -1,0 +1,23 @@
+{
+  "keywords": {
+    "jam buka": "jam buka",
+    "jam operasional": "jam buka",
+    "alamat": "alamat",
+    "lokasi": "alamat",
+    "cara pesan": "cara pesan",
+    "order": "cara pesan",
+    "beli": "cara pesan",
+    "bpom": "bpom",
+    "ori": "bpom",
+    "asli": "bpom",
+    "kontak": "kontak",
+    "shopee": "kontak"
+  },
+  "responses": {
+    "jam buka": "Layanan chat dan pemrosesan pesanan Hanasui Official Store beroperasi setiap hari Senin - Sabtu pukul 08.00 - 17.00 WIB.",
+    "alamat": "Pengiriman dilakukan dari gudang resmi Hanasui Official Store (Tangerang / Jabodetabek) melalui Shopee.",
+    "bpom": "Seluruh produk Hanasui yang kami jual 100% Original, telah terdaftar resmi di BPOM, dan bersertifikat Halal.",
+    "cara pesan": "Untuk pemesanan, Anda dapat langsung mengklik tautan produk Shopee yang kami berikan atau melihat katalog lengkap di website kami.",
+    "kontak": "Informasi Toko *Hanasui Official Store*:\n🛍️ *Shopee:* https://shopee.co.id/hanasuiofficialstore\n⏰ *Jam Operasional:* Senin - Sabtu (08.00 - 17.00 WIB)\n💬 *Layanan Chat:* Langsung melalui WhatsApp ini atau fitur chat di website katalog kami."
+  }
+}
